@@ -1,0 +1,26 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Pipeline data outputs (proprietary / high-value DaaS exports)
+output/*.xlsx
+output/*.csv
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Editor & OS artifacts
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+inspect_data.py

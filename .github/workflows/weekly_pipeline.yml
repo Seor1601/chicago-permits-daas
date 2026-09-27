@@ -1,0 +1,55 @@
+name: Weekly Chicago Commercial Permits Pipeline
+
+on:
+  schedule:
+    # Runs every Monday at 06:00 UTC (Cost: $0 USD via GitHub Actions)
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      min_cost:
+        description: 'Minimum reported cost threshold (USD)'
+        required: false
+        default: '50000'
+      limit:
+        description: 'Record limit'
+        required: false
+        default: '150'
+
+concurrency:
+  group: chicago-daas-pipeline
+  cancel-in-progress: true
+
+jobs:
+  run-pipeline:
+    name: Execute SODA Extraction & Export
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12 with pip cache
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Execute Commercial Permits ETL
+        env:
+          CHICAGO_SODA_APP_TOKEN: ${{ secrets.CHICAGO_SODA_APP_TOKEN }}
+        run: |
+          python -m chicago_pipeline.main --min-cost 50000 --limit 150
+
+      - name: Upload Weekly Excel Dataset Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chicago-commercial-permits-weekly-${{ github.run_id }}
+          path: output/*.xlsx
+          retention-days: 30
+          if-no-files-found: error
