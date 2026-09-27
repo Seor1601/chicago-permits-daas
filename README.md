@@ -5,7 +5,7 @@
 ![Infrastructure Cost](https://img.shields.io/badge/compute%20cost-%240.00%2Fmonth-emerald?style=flat-square)
 ![Architecture](https://img.shields.io/badge/architecture-serverless%20ETL-zinc?style=flat-square)
 
-Automated, institutional-grade Data-as-a-Service (DaaS) pipeline delivering weekly curated commercial construction permits, major alterations, and high-value project leads ($\ge \$50,000$ USD) across the Chicago metropolitan area.
+Automated, institutional-grade Data-as-a-Service (DaaS) pipeline delivering weekly curated commercial construction permits, major alterations, and high-value commercial construction filings ($\ge \$50,000$ USD) across the Chicago metropolitan area.
 
 ---
 
@@ -15,14 +15,14 @@ Automated, institutional-grade Data-as-a-Service (DaaS) pipeline delivering week
 flowchart LR
     A["City of Chicago SODA API<br/>(resource/ydr8-5enu)"] -->|"SoQL Filter:<br/>reported_cost >= $50,000"| B["chicago_pipeline.extractor"]
     B -->|"Raw JSON Stream"| C["chicago_pipeline.transformer"]
-    C -->|"ISO-8601 Normalization<br/>Address & Contact Resolution"| D["chicago_pipeline.exporter"]
+    C -->|"ISO-8601 Normalization<br/>Address & Entity Resolution"| D["chicago_pipeline.exporter"]
     D -->|"openpyxl Engine"| E["output/chicago_permits_sample.xlsx<br/>(Accounting Format $#,##0)"]
     E -->|"GitHub Actions v4"| F["Weekly Automated Artifact<br/>(Mondays 06:00 UTC)"]
 ```
 
 ### Architecture Highlights
 - **Server-Side SoQL Filtering:** Avoids pulling megabytes of unneeded residential minor repair permits over the wire. Extracts only commercial projects $\ge \$50,000$.
-- **Fault-Tolerant Dynamic Contact Parsing:** Iterates across multi-party municipal contact arrays (15 potential slots) to classify General Contractors, Property Owners, Architects, and specialty subcontractors (HVAC, Electrical, Plumbing, Masonry).
+- **Fault-Tolerant Dynamic Entity Parsing:** Iterates across multi-party municipal contact arrays (15 potential slots) to classify General Contractors, Property Owners, Architects, and specialty trade contractors (HVAC, Electrical, Plumbing, Masonry).
 - **Executive-Ready OpenPyXL Output:** Employs auto-adapted column metrics, frozen header panes, clean monochrome palette, and standard accounting currency formats (`$#,##0`).
 
 ---
@@ -43,7 +43,7 @@ This DaaS solution is engineered to operate at strict **zero operational expense
 
 ## 3. Data Schema & Field Dictionary
 
-Each record in the generated `.xlsx` lead feed adheres to the following contract:
+Each record in the generated `.xlsx` commercial market dataset adheres to the following contract:
 
 | Field Name | Type | Description | Example |
 | :--- | :--- | :--- | :--- |
@@ -101,6 +101,24 @@ The pipeline is preconfigured via [`.github/workflows/weekly_pipeline.yml`](.git
 
 ---
 
-## 6. Open Data Disclaimer & Licensing
+## 6. Open Data Governance, Regulatory Classification & Compliance
 
-Data is sourced from the City of Chicago Open Data Portal under the terms of the City of Chicago Open Data Policy. This repository is distributed under the MIT License.
+### Regulatory & Industry Classification
+- **NAICS Code:** `541990` (All Other Professional, Scientific, and Technical Services — Market Research & Preconstruction Analytics)
+- **Merchant Category Code (MCC):** `7372` (Computer Programming, Data Processing, and Integrated Systems Services)
+- **Data Provenance:** Public municipal building permit filings published under the Freedom of Information Act (FOIA) and the City of Chicago Open Data Ordinance via SODA 2.0 API (`resource/ydr8-5enu.json`).
+
+### Strict Privacy & Zero PII Guarantee
+The data processing pipeline strictly ingests, standardizes, and distributes public corporate municipal filings:
+- **Included Data:** Licensed corporate contractor entity names, municipal permit numbers, declared structural valuations, commercial jobsite addresses, and licensed trade specialties.
+- **Zero PII Policy:** The service does **not** process, scrape, harvest, or distribute personally identifiable information (PII), consumer credit data, private residential owner phone numbers, or individual email addresses.
+- **Acceptable Use & Anti-Spam:** This data feed is engineered exclusively for macroeconomic tracking, supply chain capacity planning, and preconstruction market intelligence. It does not provide outbound cold-calling lists, automated contact-enrichment, or unsolicited email marketing tools.
+
+### Commercial Subscription Fulfillment
+Subscribers receive an automated, standardized weekly `.xlsx` dataset delivered every Monday at 05:30 AM CST directly to their registered corporate email address, powered by serverless GitHub Actions automation and authenticated subscription delivery.
+
+---
+
+## 7. Licensing
+
+Data is sourced from the City of Chicago Open Data Portal under the terms of the City of Chicago Open Data Policy. Source code is licensed under the MIT License.

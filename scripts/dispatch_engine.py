@@ -162,7 +162,7 @@ def fetch_chicago_commercial_permits(
     # Graceful fallback: if dataset in short 7-day window is unusually sparse (e.g. holiday weekend),
     # expand window to 14 days to ensure subscriber delivery has high utility
     if len(records) < 5 and days_back <= 7:
-        logger.warning(f"Short window yielded only {len(records)} records. Expanding to 14 days for robust lead depth...")
+        logger.warning(f"Short window yielded only {len(records)} records. Expanding to 14 days for robust dataset depth...")
         return fetch_chicago_commercial_permits(days_back=14, min_cost=min_cost, limit=limit, app_token=app_token)
 
     return records
