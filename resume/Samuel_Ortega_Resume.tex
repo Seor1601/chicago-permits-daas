@@ -1,0 +1,152 @@
+%-------------------------
+% Resume in Latex - Jake's Resume Canonical Template
+% Author : Samuel Elías Ortega Rodríguez
+% License : MIT
+% Formato optimizado para ATS (r/EngineeringResumes)
+%------------------------
+
+\documentclass[letterpaper,10.8pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+% Configuración de encabezado y pie de página
+\pagestyle{fancy}
+\fancyhf{} % Limpiar todos los campos
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Ajuste de márgenes para ajuste estricto a 1 sola página
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-.55in}
+\addtolength{\textheight}{1.1in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Formato de títulos de sección
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+
+% Asegurar que el PDF sea 100% parseable por ATS (OCR y texto seleccionable)
+\pdfgentounicode=1
+
+% Comandos personalizados estilo Jake's Resume
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+
+%-------------------------------------------
+%%%%%%  INICIO DEL RESUME  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING (ENCABEZADO ATS)----------
+\begin{center}
+    \textbf{\Huge \scshape Samuel Elías Ortega Rodríguez} \\ \vspace{2pt}
+    \small Barranquilla, Colombia $|$ +57 318 393 6524 $|$ 
+    \href{mailto:samuelortega1601@gmail.com}{\underline{samuelortega1601@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/samuel-elias-ortega}{\underline{linkedin.com/in/samuel-elias-ortega}} $|$ 
+    \href{https://github.com/Seor1601}{\underline{github.com/Seor1601}}
+\end{center}
+
+%-----------EDUCATION (EDUCACIÓN)-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Universidad del Norte}{Barranquilla, Colombia}
+      {Candidate for Bachelor of Science in Systems Engineering (ABET-Accredited Curriculum)}{Expected 2029 (4th Sem)}
+      \resumeItemListStart
+        \resumeItem{\textbf{International Degree Equivalent:} B.S. in Computer Science \& Engineering $|$ Started 2025}
+        \resumeItem{\textbf{Relevant Coursework:} Object-Oriented Programming (Java), Data Structures \& Algorithms, Discrete Mathematics}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS (HABILIDADES TÉCNICAS)-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java (OOP, Collections, Exception Handling), Python (ETL Pipelines, Automation, File I/O), SQL (PostgreSQL, SQLite), Bash/PowerShell} \\
+     \textbf{Technologies \& Libraries}{: REST APIs (Socrata SODA), Pandas, Requests, BeautifulSoup, OpenPyXL, JSON-LD / Schema.org} \\
+     \textbf{Developer Tools \& Infrastructure}{: Git, GitHub (Feature Branching, PRs, Code Reviews), Cloudflare Pages, VS Code, CI/CD Automation Scripts} \\
+     \textbf{Core Concepts}{: Data Structures \& Algorithms, Object-Oriented Design, Big-O Complexity Analysis, Data Validation, Defensive Programming} \\
+     \textbf{Languages Proficiency}{: English (B2 -- Professional Working Proficiency, Technical Documentation), Spanish (Native)}
+    }}
+ \end{itemize}
+ \vspace{-8pt}
+
+%-----------TECHNICAL PROJECTS (PROYECTOS TÉCNICOS)-----------
+\section{Technical Projects}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{Automated Municipal Data Ingestion \& Analytics Pipeline} $|$ \emph{Python, SODA REST API, Cloudflare, ETL, OpenPyXL}}{2026}
+          \resumeItemListStart
+            \resumeItem{Architected an automated end-to-end Python ETL pipeline ingesting municipal commercial building filings from Chicago's public SODA 2.0 REST endpoint, sustaining zero-failure execution at \$0.00/month cloud infrastructure cost.}
+            \resumeItem{Engineered server-side SoQL filters and schema normalization modules to extract commercial CapEx projects ($\ge$\$50k), pruning redundant payload attributes and enforcing 100\% PII-free data privacy compliance.}
+            \resumeItem{Automated recurring delivery of weekly multi-tab Excel workbooks (.xlsx) using OpenPyXL with standardized accounting formatting (\$\#,\#\#0) and generated executive PDF digests via scheduled headless scripts.}
+            \resumeItem{Deployed edge web distribution platform on Cloudflare Pages integrating Schema.org JSON-LD structured metadata (DataCatalog, Dataset, Product), passing 100\% of automated pre-flight SEO and validation audits.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Real-Time Interactive Game Application} $|$ \emph{Java, OOP, Design Patterns, Git, GitHub -- GuayabaLabs}}{2025 -- 2026}
+          \resumeItemListStart
+            \resumeItem{Architected a modular desktop game engine prototype in Java, decoupling scene management, physics transitions, and event dispatching through rigorous implementation of the State and Observer design patterns.}
+            \resumeItem{Engineered a deterministic game loop prototype with real-time delta-time calculations, targeting 60 FPS update-render synchronization while stabilizing memory through object lifecycle optimization.}
+            \resumeItem{Constructed boundary collision-detection algorithms and dynamic entity management systems utilizing Java Collections (\texttt{ArrayList}, \texttt{HashMap}) for sub-millisecond runtime entity tracking.}
+            \resumeItem{Coordinated distributed engineering workflows within the GuayabaLabs GitHub team, enforcing code quality through feature branching, strict PR reviews, and comprehensive technical Markdown specifications.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Algorithmic Data Validation \& Optimization Utility} $|$ \emph{Python, Hash Tables, Algorithms, Big-O Analysis}}{2025}
+          \resumeItemListStart
+            \resumeItem{Optimized structured dataset processing efficiency from $O(N^2)$ quadratic complexity to $O(N)$ linear-time performance by eliminating nested loops and refactoring lookups to hash-based indexing and set operations.}
+            \resumeItem{Engineered defensive exception-handling routines and schema validation rules to isolate boundary failures, empty rows, and malformed inputs, securing 100\% script execution uptime across edge-case benchmarks.}
+            \resumeItem{Authored a comprehensive test suite incorporating boundary values, extreme strings, and corrupt delimiters to systematically trace execution paths, validate deterministic error recovery, and assert data sanity.}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}

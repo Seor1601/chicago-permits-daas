@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuel Elías Ortega Rodríguez - Resume</title>
+  <style>
+    @page {
+      size: letter;
+      margin: 0.38in 0.45in;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #111827;
+      background-color: #ffffff;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 8.5in;
+      font-size: 9.6pt;
+      line-height: 1.32;
+    }
+    @media screen {
+      body {
+        padding: 0.4in;
+        background-color: #f3f4f6;
+      }
+      .resume-container {
+        background: #ffffff;
+        padding: 0.4in 0.45in;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        border-radius: 4px;
+      }
+    }
+    header {
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    h1 {
+      font-size: 17.5pt;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0 0 3px 0;
+      color: #111827;
+      text-transform: uppercase;
+    }
+    .contact-bar {
+      font-size: 8.8pt;
+      color: #374151;
+      white-space: nowrap;
+    }
+    .contact-bar a {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+    .separator {
+      margin: 0 5px;
+      color: #9ca3af;
+    }
+    section {
+      margin-top: 7px;
+    }
+    h2 {
+      font-size: 10.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1.2px solid #111827;
+      margin: 0 0 4px 0;
+      padding-bottom: 1.5px;
+      color: #111827;
+    }
+    .entry {
+      margin-bottom: 5px;
+    }
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.6pt;
+    }
+    .entry-title {
+      font-weight: 700;
+      color: #111827;
+    }
+    .entry-subtitle {
+      font-style: italic;
+      color: #374151;
+      font-size: 9pt;
+    }
+    .entry-date {
+      font-size: 8.8pt;
+      font-weight: 600;
+      color: #374151;
+      white-space: nowrap;
+    }
+    .entry-meta {
+      font-size: 8.8pt;
+      color: #4b5563;
+      margin-top: 1px;
+    }
+    ul {
+      margin: 2px 0 0 0;
+      padding-left: 16px;
+    }
+    li {
+      margin-bottom: 2px;
+      font-size: 9pt;
+      color: #1f2937;
+      text-align: justify;
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+    .skills-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 2px 0 0 0;
+    }
+    .skills-list li {
+      margin-bottom: 2.5px;
+      text-align: left;
+      font-size: 9pt;
+    }
+    .skill-label {
+      font-weight: 700;
+      color: #111827;
+    }
+    @media print {
+      body {
+        background: transparent;
+      }
+      .resume-container {
+        padding: 0;
+        box-shadow: none;
+      }
+      a {
+        color: #111827;
+        text-decoration: underline;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <header>
+      <h1>Samuel Elías Ortega Rodríguez</h1>
+      <div class="contact-bar">
+        Barranquilla, Colombia <span class="separator">|</span> +57 318 393 6524 <span class="separator">|</span> 
+        <a href="mailto:samuelortega1601@gmail.com">samuelortega1601@gmail.com</a> <span class="separator">|</span> 
+        <a href="https://linkedin.com/in/samuel-elias-ortega">linkedin.com/in/samuel-elias-ortega</a> <span class="separator">|</span> 
+        <a href="https://github.com/Seor1601">github.com/Seor1601</a>
+      </div>
+    </header>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Universidad del Norte</span>
+          <span class="entry-date">Expected 2029 (4th Sem | Started 2025)</span>
+        </div>
+        <div class="entry-subtitle">Candidate for Bachelor of Science in Systems Engineering (ABET-Accredited Curriculum)</div>
+        <div class="entry-meta">International Degree Equivalent: B.S. in Computer Science &amp; Engineering | Barranquilla, Colombia</div>
+        <ul>
+          <li><strong>Relevant Coursework:</strong> Object-Oriented Programming (Java), Data Structures &amp; Algorithms, Discrete Mathematics.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section>
+      <h2>Technical Skills</h2>
+      <ul class="skills-list">
+        <li><span class="skill-label">Languages:</span> Java (OOP, Collections, Exception Handling), Python (ETL Pipelines, Automation, File I/O), SQL (PostgreSQL, SQLite), Bash/PowerShell.</li>
+        <li><span class="skill-label">Technologies &amp; Libraries:</span> REST APIs (Socrata SODA), Pandas, Requests, BeautifulSoup, OpenPyXL, JSON-LD / Schema.org.</li>
+        <li><span class="skill-label">Developer Tools &amp; Infrastructure:</span> Git, GitHub (Feature Branching, PRs, Code Reviews), Cloudflare Pages, VS Code, CI/CD Automation Scripts.</li>
+        <li><span class="skill-label">Core Concepts:</span> Data Structures &amp; Algorithms, Object-Oriented Design, Big-O Complexity Analysis, Data Validation, Defensive Programming.</li>
+        <li><span class="skill-label">Languages Proficiency:</span> English (B2 – Professional Working Proficiency, Technical Documentation), Spanish (Native).</li>
+      </ul>
+    </section>
+
+    <!-- TECHNICAL PROJECTS -->
+    <section>
+      <h2>Technical Projects</h2>
+
+      <!-- Project A -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Automated Municipal Data Ingestion &amp; Analytics Pipeline</span>
+          <span class="entry-date">2026</span>
+        </div>
+        <div class="entry-subtitle">Python, SODA REST API, Cloudflare, ETL, OpenPyXL</div>
+        <ul>
+          <li><strong>Architected</strong> an automated end-to-end Python ETL pipeline ingesting municipal commercial building filings from Chicago's public SODA 2.0 REST endpoint, sustaining zero-failure execution at $0.00/month cloud infrastructure cost.</li>
+          <li><strong>Engineered</strong> server-side SoQL filters and schema normalization modules to extract commercial CapEx projects (&ge;$50k), pruning redundant payload attributes and enforcing 100% PII-free data privacy compliance.</li>
+          <li><strong>Automated</strong> recurring delivery of weekly multi-tab Excel workbooks (.xlsx) using OpenPyXL with standardized accounting formatting ($#,##0) and generated executive PDF digests via scheduled headless scripts.</li>
+          <li><strong>Deployed</strong> edge web distribution platform on Cloudflare Pages integrating Schema.org JSON-LD structured metadata (DataCatalog, Dataset, Product), passing 100% of automated pre-flight SEO and validation audits.</li>
+        </ul>
+      </div>
+
+      <!-- Project B -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Real-Time Interactive Game Application</span>
+          <span class="entry-date">2025 – 2026</span>
+        </div>
+        <div class="entry-subtitle">Java, OOP, Design Patterns, Git, GitHub — GuayabaLabs GitHub Organization</div>
+        <ul>
+          <li><strong>Architected</strong> a modular desktop game engine prototype in Java, decoupling scene management, physics transitions, and event dispatching through rigorous implementation of the State and Observer design patterns.</li>
+          <li><strong>Engineered</strong> a deterministic game loop prototype with real-time delta-time calculations, targeting 60 FPS update-render synchronization while stabilizing memory through object lifecycle optimization.</li>
+          <li><strong>Constructed</strong> boundary collision-detection algorithms and dynamic entity management systems utilizing Java Collections (<code>ArrayList</code>, <code>HashMap</code>) for sub-millisecond runtime entity tracking.</li>
+          <li><strong>Coordinated</strong> distributed engineering workflows within the GuayabaLabs GitHub team, enforcing code quality through feature branching, strict PR reviews, and comprehensive technical Markdown specifications.</li>
+        </ul>
+      </div>
+
+      <!-- Project C -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Algorithmic Data Validation &amp; Optimization Utility</span>
+          <span class="entry-date">2025</span>
+        </div>
+        <div class="entry-subtitle">Python, Hash Tables, Algorithms, Big-O Analysis</div>
+        <ul>
+          <li><strong>Optimized</strong> structured dataset processing efficiency from <em>O(N&sup2;)</em> quadratic complexity to <em>O(N)</em> linear-time performance by eliminating nested loops and refactoring lookups to hash-based indexing and set operations.</li>
+          <li><strong>Engineered</strong> defensive exception-handling routines and schema validation rules to isolate boundary failures, empty rows, and malformed inputs, securing 100% script execution uptime across edge-case benchmarks.</li>
+          <li><strong>Authored</strong> a comprehensive test suite incorporating boundary values, extreme strings, and corrupt delimiters to systematically trace execution paths, validate deterministic error recovery, and assert data sanity.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
