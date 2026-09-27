@@ -7,7 +7,7 @@
   <style>
     @page {
       size: letter;
-      margin: 0.38in 0.45in;
+      margin: 0.4in 0.45in;
     }
     *, *::before, *::after {
       box-sizing: border-box;
@@ -19,7 +19,7 @@
       margin: 0 auto;
       padding: 0;
       max-width: 8.5in;
-      font-size: 9.6pt;
+      font-size: 9.5pt;
       line-height: 1.32;
     }
     @media screen {
@@ -49,10 +49,10 @@
     .contact-bar {
       font-size: 8.8pt;
       color: #374151;
-      white-space: nowrap;
+      line-height: 1.42;
     }
     .contact-bar a {
-      color: #1d4ed8;
+      color: #111827;
       text-decoration: underline;
     }
     .separator {
@@ -82,7 +82,7 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      font-size: 9.6pt;
+      font-size: 9.5pt;
     }
     .entry-title {
       font-weight: 700;
@@ -91,7 +91,7 @@
     .entry-subtitle {
       font-style: italic;
       color: #374151;
-      font-size: 9pt;
+      font-size: 8.9pt;
     }
     .entry-date {
       font-size: 8.8pt;
@@ -110,7 +110,7 @@
     }
     li {
       margin-bottom: 2px;
-      font-size: 9pt;
+      font-size: 8.9pt;
       color: #1f2937;
       text-align: justify;
     }
@@ -125,7 +125,7 @@
     .skills-list li {
       margin-bottom: 2.5px;
       text-align: left;
-      font-size: 9pt;
+      font-size: 8.9pt;
     }
     .skill-label {
       font-weight: 700;
@@ -151,10 +151,8 @@
     <header>
       <h1>Samuel Elías Ortega Rodríguez</h1>
       <div class="contact-bar">
-        Barranquilla, Colombia <span class="separator">|</span> +57 318 393 6524 <span class="separator">|</span> 
-        <a href="mailto:samuelortega1601@gmail.com">samuelortega1601@gmail.com</a> <span class="separator">|</span> 
-        <a href="https://linkedin.com/in/samuel-elias-ortega">linkedin.com/in/samuel-elias-ortega</a> <span class="separator">|</span> 
-        <a href="https://github.com/Seor1601">github.com/Seor1601</a>
+        Barranquilla, Colombia <span class="separator">|</span> +57 318 393 6524 <span class="separator">|</span> <a href="mailto:samuelortega1601@gmail.com">samuelortega1601@gmail.com</a><br>
+        <a href="https://linkedin.com/in/samuel-elias-ortega">linkedin.com/in/samuel-elias-ortega</a> <span class="separator">|</span> <a href="https://github.com/Seor1601">github.com/Seor1601</a>
       </div>
     </header>
 
@@ -199,7 +197,7 @@
         <div class="entry-subtitle">Python, SODA REST API, Cloudflare, ETL, OpenPyXL</div>
         <ul>
           <li><strong>Architected</strong> an automated end-to-end Python ETL pipeline ingesting municipal commercial building filings from Chicago's public SODA 2.0 REST endpoint, sustaining zero-failure execution at $0.00/month cloud infrastructure cost.</li>
-          <li><strong>Engineered</strong> server-side SoQL filters and schema normalization modules to extract commercial CapEx projects (&ge;$50k), pruning redundant payload attributes and enforcing 100% PII-free data privacy compliance.</li>
+          <li><strong>Engineered</strong> server-side SoQL filters and schema normalization modules to extract commercial CapEx projects (>= $50k), pruning redundant payload attributes and enforcing 100% PII-free data privacy compliance.</li>
           <li><strong>Automated</strong> recurring delivery of weekly multi-tab Excel workbooks (.xlsx) using OpenPyXL with standardized accounting formatting ($#,##0) and generated executive PDF digests via scheduled headless scripts.</li>
           <li><strong>Deployed</strong> edge web distribution platform on Cloudflare Pages integrating Schema.org JSON-LD structured metadata (DataCatalog, Dataset, Product), passing 100% of automated pre-flight SEO and validation audits.</li>
         </ul>

@@ -50,7 +50,7 @@
 % Asegurar que el PDF sea 100% parseable por ATS (OCR y texto seleccionable)
 \pdfgentounicode=1
 
-% Comandos personalizados estilo Jake's Resume
+% Comandos personalizados estilo Jake's Resume con \textwidth al ras del margen derecho
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
@@ -59,7 +59,7 @@
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
@@ -67,7 +67,7 @@
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-5pt}
 }
@@ -82,11 +82,11 @@
 
 \begin{document}
 
-%----------HEADING (ENCABEZADO ATS)----------
+%----------HEADING (ENCABEZADO ATS EN 2 RENGLONES BALANCEADOS)----------
 \begin{center}
     \textbf{\Huge \scshape Samuel Elías Ortega Rodríguez} \\ \vspace{2pt}
     \small Barranquilla, Colombia $|$ +57 318 393 6524 $|$ 
-    \href{mailto:samuelortega1601@gmail.com}{\underline{samuelortega1601@gmail.com}} $|$ 
+    \href{mailto:samuelortega1601@gmail.com}{\underline{samuelortega1601@gmail.com}} \\ \vspace{2pt}
     \href{https://linkedin.com/in/samuel-elias-ortega}{\underline{linkedin.com/in/samuel-elias-ortega}} $|$ 
     \href{https://github.com/Seor1601}{\underline{github.com/Seor1601}}
 \end{center}
@@ -124,7 +124,7 @@
           {\textbf{Automated Municipal Data Ingestion \& Analytics Pipeline} $|$ \emph{Python, SODA REST API, Cloudflare, ETL, OpenPyXL}}{2026}
           \resumeItemListStart
             \resumeItem{Architected an automated end-to-end Python ETL pipeline ingesting municipal commercial building filings from Chicago's public SODA 2.0 REST endpoint, sustaining zero-failure execution at \$0.00/month cloud infrastructure cost.}
-            \resumeItem{Engineered server-side SoQL filters and schema normalization modules to extract commercial CapEx projects ($\ge$\$50k), pruning redundant payload attributes and enforcing 100\% PII-free data privacy compliance.}
+            \resumeItem{Engineered server-side SoQL filters and schema normalization modules to extract commercial CapEx projects (>= \$50k), pruning redundant payload attributes and enforcing 100\% PII-free data privacy compliance.}
             \resumeItem{Automated recurring delivery of weekly multi-tab Excel workbooks (.xlsx) using OpenPyXL with standardized accounting formatting (\$\#,\#\#0) and generated executive PDF digests via scheduled headless scripts.}
             \resumeItem{Deployed edge web distribution platform on Cloudflare Pages integrating Schema.org JSON-LD structured metadata (DataCatalog, Dataset, Product), passing 100\% of automated pre-flight SEO and validation audits.}
           \resumeItemListEnd
